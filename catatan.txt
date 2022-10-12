@@ -1,0 +1,35 @@
+A) Pengertian
+: Singleton pattern ialah cara untuk membuat satu object
+yang dibagikan pada banyak sumber daya pada aplikasi anda tanpa
+harus kehilangan informasi pada object tersebut.
+
+B) Permasalahan singleton pattern
+: 1) Sangat susah untuk melakukan testing
+  2) Terlalu banyak coupling
+  3) Race condition. Mengubah data pada singleton
+  pattern pada dua instansce dalam waktu bersamaan
+  dapat mengakibatkan overriding dari data tersebut.
+
+C) Penjelasan loggerBeforeSingleton.js
+    1) Berisikan class logger 
+    2) mempunyai property logs untuk menyimpan log
+    3) method log digunakan untuk memprint message dan menaruhnya
+    pada daftar logs
+    4) method printLogCount digunakan untuk mengecek berapa banyak
+    daftar logs.
+    
+D) Permasalahan 
+    : Permasalahannya terjadi ialah ketika terdapat dua instansce
+    logger yang memanggil printLogCount. printLogCount hanya menampilkan
+    jumlah dari log instance tersebut. Bukan seluruhnya
+
+E) Solusi
+    : 1) Ubah logger menjadi singleton
+      2) Pada constructor logger buat kondisi
+      jika instance belum ada ia akan menginisiasi property
+      dan juga inisiasi instance
+      3) Pada constructor mengembalikan instance
+      4) Buat object logger
+      5) Freeze object tersebut agar tidak dapat dimodifikasi
+      method dan propertynya
+      6) Export object logger.
